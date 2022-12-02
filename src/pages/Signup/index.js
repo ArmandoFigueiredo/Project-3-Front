@@ -39,7 +39,9 @@ export function Signup() {
 
     try {
       const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
+      await api.post("/api/1.0/user/signup", { ...form, img: imgURL, 
+        // role:"ADMIN" 
+      });
 
       navigate("/login");
     } catch (error) {
