@@ -3,7 +3,7 @@ import { Header } from "../../components/Header";
 import { api } from "../../api/api";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
-export function BookDetails(){
+export function Delete(){
     const[book, setbook]=useState({title:"", author:"", releaseYear:"", genre:"", synopsis:"", coverImage:""})
     const{id}= useParams()
 
@@ -26,7 +26,7 @@ export function BookDetails(){
             <section>
                 <img src={book.coverImage}></img>
                 <Link to={`/book/edit/${id}`}>Editar</Link>
-                <Link to={`/book/delete/${id}`}>Deletar</Link>
+                <button onClick={() => {handleDelete(id)}}>Confirmar Exclusão</button>
             </section>
             <p><strong>Titulo Do Livro: </strong>{book.title}</p>
             <p><strong>Autor: </strong>{book.author}</p>

@@ -7,6 +7,8 @@ import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
 import { BookDetails } from "./pages/BookDetails";
 import { CreateBook } from "./pages/CreateBook"
+import { EditBook } from "./pages/EditBook";
+import { Delete } from "./pages/Delete";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -25,6 +27,8 @@ function App() {
           />
           <Route path="book/create" element={<ProtectedRoute component={CreateBook} />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="book/edit/:id" element={<EditBook />} />
+          <Route path="book/delete/:id" element={<Delete />} />
         </Routes>
       </AuthContextComponent>
     </>

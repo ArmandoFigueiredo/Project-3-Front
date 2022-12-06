@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { api } from "../../api/api.js"
 
-export function BookList({books}){
+export function BookList({books}){    
+    const handleDelete=(id) => {
+        api.delete(`/api/1.0/book/${id}`).then((res) => {
+            console.log(res);
+            window.location.reload()
+          })
+    }
     return(
         <section>
         {books.map((book) => (
@@ -11,8 +18,8 @@ export function BookList({books}){
                 <p>{book.releaseYear}</p>
                 <div>
                     <Link to={`/book/${book._id}`}>Ver Detalhes</Link>
-                    <button>Editar</button>
-                    <button>Deletar</button>
+                    <Link to={`/book/edit/${book._id}`}>Editar</Link>
+                    <Link to={`/book/delete/${book._id}`}>Deletar</Link>
                 </div>
             </div>
         ))}

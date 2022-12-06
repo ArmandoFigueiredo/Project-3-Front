@@ -1,4 +1,8 @@
+import { useContext } from "react"
+import { AuthContext } from "../../contexts/authContext"
+
 export function Header (){
+    const{loggedInUser} = useContext(AuthContext)
     return(
         <header>
             <div>
@@ -8,8 +12,8 @@ export function Header (){
             </div>
 
             <div>
-            <h3>Bem-vindo, Usuário</h3>
-            <a href="/signup">Sair</a>
+            <h3>Bem-vindo, {loggedInUser?loggedInUser.user.name:"Usuário"}</h3>
+            <a href="/login">Sair</a>
             </div>
         </header>
     )

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { api } from "../../api/api"
 
 export function Form(){
@@ -8,12 +9,16 @@ export function Form(){
     const[genre, setGenre]=useState("")
     const[coverImage, setCoverImage]=useState("")
     const[synopsis, setSynopsis]=useState("")
+    const navigate = useNavigate()
     const handleClick=async(e)=>{
         e.preventDefault()
         const url="/api/1.0/book"
         const body={title, author, releaseYear, genre, coverImage, synopsis}
         const res=await api.post(url, body)
         console.log(res)
+        if (res.status===201){
+            navigate("/")
+        }
     }
     return(
         <form>

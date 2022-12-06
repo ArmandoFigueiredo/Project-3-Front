@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/authContext";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -48,6 +49,12 @@ export function Signup() {
       console.log(error);
     }
   }
+
+  const {setLoggedInUser}= useContext(AuthContext)
+useEffect(() => {
+  setLoggedInUser({token:"", user:{}})
+  localStorage.setItem("loggedInUser", "");
+}, [])
 
   return (
     <form onSubmit={handleSubmit}>
