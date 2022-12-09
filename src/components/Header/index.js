@@ -1,18 +1,20 @@
 import { useContext } from "react"
 import { AuthContext } from "../../contexts/authContext"
+import "./style.css"
 
 export function Header (){
     const{loggedInUser} = useContext(AuthContext)
     return(
-        <header>
-            <div>
-            <h1>Book App</h1>
-            <a href="/"> Home </a>
+        <header className="headerSection">
+            <div className="flexrow">
+            <h1>
+            <a href="/"> Book App </a>
+            </h1>        
             <a href="/book/create"> Novo Livro </a>
             </div>
 
-            <div>
-            <h3>Bem-vindo, {loggedInUser?loggedInUser.user.name:"Usuário"}</h3>
+            <div className="flexrow">
+            {loggedInUser?<h3>loggedInUser.user.name</h3>:<><a href="/signup">Sign Up</a><a href="/login">Login</a></>}            
             <a href="/login">Sair</a>
             </div>
         </header>

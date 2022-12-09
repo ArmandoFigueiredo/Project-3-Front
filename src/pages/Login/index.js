@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/Header";
 
 export function Login() {
   const [form, setForm] = useState({
@@ -38,6 +39,7 @@ useEffect(() => {
 }, [])
 
   return (
+    <><Header/>
     <form onSubmit={handleSumit}>
       <label>Email:</label>
       <input
@@ -55,5 +57,6 @@ useEffect(() => {
       />
       <button type="submit">Entrar!</button>
     </form>
+    </>
   );
 }

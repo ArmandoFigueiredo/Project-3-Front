@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
+import { Header } from "../../components/Header";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ useEffect(() => {
 }, [])
 
   return (
+    <><Header/>
     <form onSubmit={handleSubmit}>
       <label htmlFor="formName">Nome:</label>
       <input
@@ -95,5 +97,6 @@ useEffect(() => {
       />
       <button type="submit">Cadastrar</button>
     </form>
+    </>
   );
 }

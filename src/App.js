@@ -9,7 +9,7 @@ import { BookDetails } from "./pages/BookDetails";
 import { CreateBook } from "./pages/CreateBook"
 import { EditBook } from "./pages/EditBook";
 import { Delete } from "./pages/Delete";
-
+import "./App.css"
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {

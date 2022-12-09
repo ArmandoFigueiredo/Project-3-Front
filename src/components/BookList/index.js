@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../api/api.js"
+import image from "../../images/book.jpg"
 
 export function BookList({books}){    
     const handleDelete=(id) => {
@@ -8,11 +9,12 @@ export function BookList({books}){
             window.location.reload()
           })
     }
+    
     return(
         <section>
         {books.map((book) => (
             <div>
-                <img src={book.coverImage}/>
+                <img src={book.coverImage || image}/>
                 <h4>{book.title}</h4>
                 <h5>{book.author}</h5>
                 <p>{book.releaseYear}</p>

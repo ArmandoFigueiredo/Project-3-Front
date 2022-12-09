@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { api } from "../../api/api";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import image from "../../images/book.jpg"
 
 export function BookDetails(){
     const[book, setbook]=useState({title:"", author:"", releaseYear:"", genre:"", synopsis:"", coverImage:""})
@@ -24,7 +25,7 @@ export function BookDetails(){
         <div>
             <Header/>
             <section>
-                <img src={book.coverImage}></img>
+                <img src={book.coverImage || image}></img>
                 <Link to={`/book/edit/${id}`}>Editar</Link>
                 <Link to={`/book/delete/${id}`}>Deletar</Link>
             </section>

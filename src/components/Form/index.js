@@ -28,11 +28,11 @@ export function Form(){
             <label>Autor
             <input type="text" value={author} onChange={(e) => {setAuthor(e.target.value)}}/></label>
             <label>Ano de Lançamento
-            <input type="text" value={releaseYear} onChange={(e) => {setReleaseYear(e.target.value)}}/></label>
+            <input type="number" value={releaseYear} onChange={(e) => {setReleaseYear(e.target.value)}}/></label>
             <label>Genero
             <input type="text" value={genre} onChange={(e) => {setGenre(e.target.value)}}/></label>
             <label>Imagem da Capa
-            <input type="file" value={coverImage} onChange={(e) => {setCoverImage(e.target.value)}}/></label>
+            <input type="text" value={coverImage} onChange={(e) => {setCoverImage(e.target.value)}}/></label>
             <label>Sinopse
             <input type="textArea" value={synopsis} onChange={(e) => {setSynopsis(e.target.value)}}/></label>
             <button onClick={handleClick}> Salvar </button>

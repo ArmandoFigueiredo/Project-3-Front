@@ -1,0 +1,13 @@
+.headerSection {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+}
+
+.headerSection a {
+    color: white;
+    text-decoration: none;
+    cursor:pointer;
+    padding: 10px;
+}
