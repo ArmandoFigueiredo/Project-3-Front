@@ -1,0 +1,26 @@
+.bookDetails{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bookDetails a{
+    color: black;
+    background-color: grey;
+    padding: 0.3rem;
+    text-decoration: none;
+    border-radius: 0.2rem;
+    margin: 0.8rem;
+}
+
+.bookDetails .delete{
+    color: white;
+    background-color: red;
+}
+
+.bookDetails .sideBar{
+    background-color: lightgray;
+    border-radius: 0.5rem;
+    width: 40%;
+    padding: 0.5rem;    
+}

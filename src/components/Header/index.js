@@ -14,7 +14,7 @@ export function Header (){
             </div>
 
             <div className="flexrow">
-            {loggedInUser?<h3>loggedInUser.user.name</h3>:<><a href="/signup">Sign Up</a><a href="/login">Login</a></>}            
+            {loggedInUser?<h3>{loggedInUser.user.name}</h3>:<><a href="/signup">Sign Up</a><a href="/login">Login</a></>}            
             <a href="/login">Sair</a>
             </div>
         </header>

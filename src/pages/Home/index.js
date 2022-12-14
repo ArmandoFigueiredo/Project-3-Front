@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { api } from "../../api/api";
 import { BookList } from "../../components/BookList";
 import { Header } from "../../components/Header";
+import "./style.css"
 
 const testeBooks = [
   {title:"senhor dos aneis", author:"desconhecido", releaseYear:"2000", coverImage:"https://www.shortandtweet.com/images/short-and-tweet-default-book-cover.jpg"},
@@ -18,10 +19,7 @@ export function Home() {
     // setbooks(testeBooks)
   },[])
   return (
-    <div><Header/><BookList books={books}/>
-    <nav><Link to="/login">Login</Link>
-    <Link to="/signup">Sign Up</Link>
-    </nav>
+    <div><Header/><BookList books={books}/>    
     </div>
   );
 }
